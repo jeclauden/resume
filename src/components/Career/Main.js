@@ -9,7 +9,7 @@ import {
   YearsPara,
 } from "./MainElements";
 
-const Main = () => {
+const Main = ({ mainTitle, years, subtitle, description }) => {
   const ColoredLine = () => (
     <hr
       style={{
@@ -22,18 +22,12 @@ const Main = () => {
   return (
     <MainContainer>
       <ColumnOne>
-        <MainTitle>University of South Australia</MainTitle>
-        <YearsPara>Aug 2006 - Jan 2007</YearsPara>
+        <MainTitle>{mainTitle}</MainTitle>
+        <YearsPara>{years}</YearsPara>
       </ColumnOne>
       <ColumnTwo>
-        <SubTitle>Software Development</SubTitle>
-        <Description>
-          Lorem ipsum, or lipsum as it is sometimes known, is dummy text used in
-          laying out print, graphic or web designs. The passage is attributed to
-          an unknown typesetter in the 15th century who is thought to have
-          scrambled parts of Cicero's De Finibus Bonorum et Malorum for use in a
-          type specimen book
-        </Description>
+        <SubTitle>{subtitle}</SubTitle>
+        <Description>{description}</Description>
       </ColumnTwo>
     </MainContainer>
   );

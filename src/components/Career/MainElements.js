@@ -5,6 +5,7 @@ const flexDisplay = css`
   justify-content: center;
   align-items: flex-start;
   color: #434242;
+  margin-bottom: 25px;
 `;
 
 const columnDisplay = css`
@@ -37,24 +38,25 @@ export const MainContainer = styled.div`
 
 export const ColumnOne = styled.div`
   ${columnDisplay}
-  margin-right: 20px;
+  margin-right: 40px;
   width: 33%;
 
   @media screen and (max-width: 992px) {
     margin-bottom: 10px;
+    margin-right: 0;
   }
 `;
 
 export const ColumnTwo = styled.div`
   ${columnDisplay}
-  width: 67%;
-  /* background: violet; */
+  width: 66%;
 `;
 
 export const MainTitle = styled.h4`
   font-size: 18px;
   font-weight: 700;
   margin-bottom: 10px;
+  line-height: 1.1;
 `;
 
 export const YearsPara = styled.p`
@@ -65,7 +67,7 @@ export const YearsPara = styled.p`
 export const SubTitle = styled.p`
   ${paraStyles}
   font-weight: 700;
-  line-height: 1.25;
+  line-height: 1.4;
 `;
 
 export const Description = styled.p`

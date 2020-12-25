@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import Career from "../components/Career/Career";
 import Footer from "../components/Footer";
 import HeroSection from "../components/HeroSection";
 import InfoSection from "../components/InfoSection";
@@ -15,12 +16,13 @@ const Home = () => {
   return (
     <>
       <HeroSection />
-      <InfoSection {...homeOjbectOne} />
+      {/* <InfoSection {...homeOjbectOne} />
       <InfoSection {...homeOjbectTwo} />
       <InfoSection {...homeOjbectThree} />
       <InfoSection {...homeOjbectFour} />
-      <InfoSection {...homeOjbectFive} />
-      <Services />
+      <InfoSection {...homeOjbectFive} /> */}
+      <Career />
+      {/* <Services /> */}
       <Footer />
     </>
   );

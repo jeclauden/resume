@@ -5,13 +5,25 @@
   font-family: "Open Sans", sans-serif;
 }
 
-/* 
-Section Title: h3, font-weght: 300,f-s: 28px, color: #22A39F, line-h: 1.1
-Color: #F1F5F9
-  Color: #00A6A0
-  University Title: H4 font-size 18px, line-heiht: 1.1
-  Years: p-tag font-size: 15px, line-height: 1.64, color: #434242
-  Course Title: p-tag (strong) f-w: 700, color:#434242, f-s: 15px, l-h: 1.64
-  Educ Description: p tag, f-s: 15px, l-h: 1.64, color: #434242
-  bg: #F4EFDE
-*/
+body {
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 1.64;
+}
+
+/* CSSTransition classes  */
+.menu-enter {
+  height: 0;
+}
+.menu-enter-active {
+  height: 300px;
+  transition: height 500ms ease;
+}
+.menu-exit {
+  height: 300px;
+  transition: height 500ms ease;
+}
+.menu-exit-active {
+  height: 0;
+  transition: all 500ms ease;
+}

@@ -2,11 +2,12 @@ import styled from "styled-components";
 import { Link } from "react-scroll";
 
 export const FooterContainer = styled.div`
-  background: #101522;
+  background: #003f3c;
+  color: #fff;
 `;
 
 export const FooterWrapper = styled.div`
-  padding: 48px 24px;
+  padding: 200px 24px;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -39,12 +40,10 @@ export const FooterLinkItems = styled.div`
   margin: 16px;
   text-align: left;
   padding: 0 30px;
-  /* box-sizing: border-box; */
-  color: #fff;
 
-  @media screen and (max-width: 420px) {
+  /* @media screen and (max-width: 420px) {
     margin-bottom: 15px;
-  }
+  } */
 `;
 
 export const FooterLinkTitle = styled.h1`
@@ -68,8 +67,8 @@ export const FooterLink = styled(Link)`
 export const SocialMedia = styled.section`
   max-width: 1000px;
   width: 100%;
-  color: #fff;
   font-size: 25px;
+  padding: 18px 0;
 `;
 
 export const SocialMediaWrapper = styled.div`
@@ -77,12 +76,8 @@ export const SocialMediaWrapper = styled.div`
   justify-content: space-between;
   align-items: center;
   width: 90%;
-  /* max-width: 1100px; */
+  flex-direction: column;
   margin: 40px auto 0 auto;
-
-  @media screen and (max-width: 820px) {
-    flex-direction: column;
-  }
 `;
 
 export const SocialIcons = styled.div`
@@ -106,8 +101,5 @@ export const Logo = styled(Link)`
 export const CopyRights = styled.p`
   font-size: 15px;
   margin: 0 15px;
-
-  @media screen and (max-width: 820px) {
-    margin: 15px 0;
-  }
+  margin: 15px 0;
 `;

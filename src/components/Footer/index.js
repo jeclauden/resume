@@ -9,7 +9,6 @@ import {
   FooterLinksWrapper,
   FooterLinkItems,
   FooterLinkTitle,
-  FooterLink,
   SocialMedia,
   SocialIcons,
   SocialIconLink,
@@ -23,60 +22,34 @@ const Footer = () => {
     scroll.scrollToTop();
   };
   return (
-    <FooterContainer>
+    <FooterContainer id="contact">
       <FooterWrapper>
+        <h1>Burundi</h1>
         <FooterLinksContainer>
           <FooterLinksWrapper>
             <FooterLinkItems>
-              <FooterLinkTitle>About Us</FooterLinkTitle>
-              <FooterLink to="/">How It Works</FooterLink>
-              <FooterLink to="/">Testimonials</FooterLink>
-              <FooterLink to="/">Careers</FooterLink>
-              <FooterLink to="/">Investors</FooterLink>
-              <FooterLink to="/">Terms of Service</FooterLink>
-            </FooterLinkItems>
-            <FooterLinkItems>
-              <FooterLinkTitle>Contact Us</FooterLinkTitle>
-              <FooterLink to="/">How It Works</FooterLink>
-              <FooterLink to="/">Testimonials</FooterLink>
-              <FooterLink to="/">Careers</FooterLink>
-              <FooterLink to="/">Investors</FooterLink>
-              <FooterLink to="/">Terms of Service</FooterLink>
-            </FooterLinkItems>
-          </FooterLinksWrapper>
-          <FooterLinksWrapper>
-            <FooterLinkItems>
               <FooterLinkTitle>Videos</FooterLinkTitle>
-              <FooterLink to="/">How It Works</FooterLink>
-              <FooterLink to="/">Testimonials</FooterLink>
-              <FooterLink to="/">Careers</FooterLink>
-              <FooterLink to="/">Investors</FooterLink>
-              <FooterLink to="/">Terms of Service</FooterLink>
-            </FooterLinkItems>
-            <FooterLinkItems>
-              <FooterLinkTitle>Ibindi</FooterLinkTitle>
-              <FooterLink to="/">How It Works</FooterLink>
-              <FooterLink to="/">Testimonials</FooterLink>
-              <FooterLink to="/">Careers</FooterLink>
-              <FooterLink to="/">Investors</FooterLink>
-              <FooterLink to="/">Terms of Service</FooterLink>
             </FooterLinkItems>
           </FooterLinksWrapper>
         </FooterLinksContainer>
         <SocialMedia>
           <SocialMediaWrapper>
             <Logo to="/" onClick={scrollToTop}>
-              CLD
+              JCN
             </Logo>
             <CopyRights>
               {" "}
-              CLD {new Date().getFullYear()} All Rights Reserved
+              JCN {new Date().getFullYear()} All Rights Reserved
             </CopyRights>
             <SocialIcons>
               <SocialIconLink href="/" target="_blank" aria-label="Facebook">
                 <FaFacebook />
               </SocialIconLink>
-              <SocialIconLink href="/" target="_blank" aria-label="LinkedIn">
+              <SocialIconLink
+                href="https://www.linkedin.com/in/jeclauden"
+                target="_blank"
+                aria-label="LinkedIn"
+              >
                 <FaLinkedin />
               </SocialIconLink>
               <SocialIconLink href="/" target="_blank" aria-label="Youtube">

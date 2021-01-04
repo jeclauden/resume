@@ -1,30 +1,30 @@
-import React, { useState } from "react";
-import Career from "../components/Career/Career";
+import React from "react";
+import ResumeEntry from "../components/Resume/ResumeEntry";
 import Footer from "../components/Footer";
-import HeroSection from "../components/HeroSection";
-import InfoSection from "../components/InfoSection";
-import {
-  homeOjbectFive,
-  homeOjbectFour,
-  homeOjbectOne,
-  homeOjbectThree,
-  homeOjbectTwo,
-} from "../components/InfoSection/Data";
-import Services from "../components/Services";
+import HomeSection from "../components/HomeSection";
+import Profile from "../components/Profile/Profile";
+import { EducationObjects } from "../components/Resume/ResumeData";
+import { ExperienceObjects } from "../components/Resume/ResumeData";
+import Navbar from "../components/Navbar";
 
 const Home = () => {
   return (
-    <>
-      <HeroSection />
-      {/* <InfoSection {...homeOjbectOne} />
-      <InfoSection {...homeOjbectTwo} />
-      <InfoSection {...homeOjbectThree} />
-      <InfoSection {...homeOjbectFour} />
-      <InfoSection {...homeOjbectFive} /> */}
-      <Career />
-      {/* <Services /> */}
+    <div>
+      <HomeSection />
+      <Navbar />
+      <Profile />
+      <ResumeEntry
+        title="Education"
+        data={EducationObjects}
+        bgColor={"#f0efeb"}
+      />
+      <ResumeEntry
+        title="Experience"
+        data={ExperienceObjects}
+        bgColor={"#B7B7A4"}
+      />
       <Footer />
-    </>
+    </div>
   );
 };
 

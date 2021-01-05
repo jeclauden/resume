@@ -47,7 +47,6 @@ const Navbar = ({ handleIsOpen }) => {
 
     return () => {
       window.removeEventListener("resize", changeNav);
-
       window.removeEventListener("scroll", changeNav);
     };
   }, []);

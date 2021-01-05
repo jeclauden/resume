@@ -13,7 +13,6 @@ import {
 
 const HomeSection = () => {
   const [nameFontSize, setFontSize] = useState(false);
-  const [height, setHeight] = useState(window.innerHeight);
 
   const changeFontSize = () => {
     if (window.innerHeight <= 540) {
@@ -23,28 +22,19 @@ const HomeSection = () => {
     }
   };
 
-  const getWindowHeight = () => {
-    setHeight(window.innerHeight);
-  };
-
   useEffect(() => {
     window.addEventListener("resize", changeFontSize);
-    window.addEventListener("resize", getWindowHeight);
     return () => {
       window.removeEventListener("resize", changeFontSize);
-      window.removeEventListener("resize", getWindowHeight);
     };
   }, []);
 
-  const string = height.toString() + "px";
-
   return (
-    <Header style={{ height: `${string}` }}>
-      {/* <HomeBG /> */}
+    <Header className="header">
+      <HomeBG />
       <HeaderWrapper>
         <Name nameFontSize={nameFontSize}>Jean-Claude Ndagijimana</Name>
-        <Resume>The Height is {string}</Resume>
-        <div>The </div>
+        <Resume>Interactive Resume</Resume>
       </HeaderWrapper>
       <FloatingButton>
         <NavButtonLink to="profile" smooth={true} duration={500} spy={true}>

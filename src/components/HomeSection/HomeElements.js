@@ -5,9 +5,7 @@ import { FaChevronDown } from "react-icons/fa";
 import { Link as LinkScroll } from "react-scroll";
 
 export const Header = styled.header`
-  min-height: 375px;
   position: relative;
-  background: violet;
 `;
 
 export const FloatingButton = styled.div`
@@ -23,6 +21,7 @@ export const FloatingButton = styled.div`
     left: 0;
     right: 0;
     width: 100%;
+    border-bottom: 1px solid #888;
   }
 `;
 
@@ -42,23 +41,31 @@ export const HomeBG = styled.div`
   bottom: 0;
   height: 100%;
   overflow: hidden;
-  /* background-image: url(${Image}); */
+  background-image: url(${Image});
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
   position: fixed;
   z-index: -5;
-  background: linear-gradient(250deg, #7b2ff7, #f107a3);
+  background-color: linear-gradient(250deg, #7b2ff7, #f107a3);
+  @media only screen and (orientation: portrait) and (max-width: 767px) {
+    position: relative;
+  }
+  @media only screen and (orientation: landscape) and (max-width: 767px) {
+    position: relative;
+  }
 `;
 
 export const HeaderWrapper = styled.div`
   color: #fff;
-  padding: 45vh 0;
   text-align: center;
-  z-index: 44;
-
+  z-index: 444;
+  position: absolute;
+  top: 32%;
+  left: 0;
+  right: 0;
   @media screen and (min-width: 768px) {
-    padding: 45vh 35px;
+    padding: 0 35px;
   }
 `;
 

@@ -7,22 +7,9 @@ import { ReactComponent as Menu } from "../../images/m.svg";
 export const Nav = styled.nav`
   background: #222;
   ${normalFlex}
-  flex-direction: column;
-  position: ${({ scrollNav }) => (scrollNav ? "fixed" : "absolute")};
-  height: ${(props) => props.numberOfMenuItems * 60};
-  width: 120px;
-  top: ${({ scrollNav }) => (scrollNav ? "70px" : "100%")};
-  right: 5vw;
-  z-index: 1000;
-  border-radius: 3px;
 
   @media screen and (max-width: 768px) {
     width: 100%;
-    top: -2px;
-    left: 0;
-    right: 0;
-    position: sticky;
-    border-radius: 0;
   }
 `;
 
@@ -93,6 +80,14 @@ const navMenuStyles = css`
 
 export const NavMenu = styled.ul`
   ${navMenuStyles}
+  background: #222;
+  position: ${({ scrollNav }) => (scrollNav ? "fixed" : "absolute")};
+  height: 300px;
+  width: 120px;
+  top: ${({ scrollNav }) => (scrollNav ? "70px" : "100%")};
+  right: 5vw;
+  z-index: 1000;
+  border-radius: 3px;
 
   @media screen and (max-width: 768px) {
     display: none;

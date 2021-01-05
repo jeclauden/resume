@@ -53,6 +53,7 @@ export const HomeBG = styled.div`
   }
   @media only screen and (orientation: landscape) and (max-width: 767px) {
     position: relative;
+    background-attachment: scroll;
   }
 `;
 

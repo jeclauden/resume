@@ -18,7 +18,6 @@ const Navbar = ({ handleIsOpen }) => {
   const [scrollNav, setScrollNav] = useState(false);
   const [showHorizontalMenu, setShowHorizontalMenu] = useState(false);
   const [changeDisplayMode, setChangeDisplayMode] = useState(false);
-  const [hilightProfile, setHighlitProfile] = useState(true);
   const profileRef = React.createRef();
 
   const nodeRef = useRef(null);
@@ -43,10 +42,8 @@ const Navbar = ({ handleIsOpen }) => {
 
   useEffect(() => {
     window.addEventListener("scroll", changeNav);
-    window.addEventListener("resize", changeNav);
 
     return () => {
-      window.removeEventListener("resize", changeNav);
       window.removeEventListener("scroll", changeNav);
     };
   }, []);
@@ -62,8 +59,8 @@ const Navbar = ({ handleIsOpen }) => {
   const menu = ["profile", "education", "experience", "projects", "contact"];
 
   return (
-    <>
-      <Nav scrollNav={scrollNav} numberOfMenuItems={menu.length}>
+    <div style={{ position: "sticky", top: "-2px" }}>
+      <Nav>
         <NavContainer>
           <NavLogo to="/" onClick={scrollToTop}>
             JCN
@@ -73,44 +70,42 @@ const Navbar = ({ handleIsOpen }) => {
               <MenuBars />
             </BarsContainer>
           </MobileIcon>
-
-          <NavMenu>
-            {menu.map((menuItem) => (
-              <NavItem key={menuItem} ref={profileRef}>
-                <NavLink to={menuItem} smooth={true} duration={500} spy={true}>
-                  {capitalize(menuItem)}
-                </NavLink>
-              </NavItem>
-            ))}
-          </NavMenu>
-
-          <CSSTransition
-            in={showHorizontalMenu}
-            timeout={300}
-            classNames="menu"
-            unmountOnExit
-            ref={nodeRef}
-          >
-            <HorizontalMenu changeDisplayMode={changeDisplayMode}>
-              {menu.map((menuItem) => (
-                <NavItem key={menuItem}>
-                  <NavLink
-                    to={menuItem}
-                    smooth={true}
-                    duration={500}
-                    spy={true}
-                    offset={-49}
-                    onClick={handleCloseMenu}
-                  >
-                    {capitalize(menuItem)}
-                  </NavLink>
-                </NavItem>
-              ))}
-            </HorizontalMenu>
-          </CSSTransition>
         </NavContainer>
       </Nav>
-    </>
+      <NavMenu scrollNav={scrollNav} numberOfMenuItems={menu.length}>
+        {menu.map((menuItem) => (
+          <NavItem key={menuItem} ref={profileRef}>
+            <NavLink to={menuItem} smooth={true} duration={500} spy={true}>
+              {capitalize(menuItem)}
+            </NavLink>
+          </NavItem>
+        ))}
+      </NavMenu>
+      <CSSTransition
+        in={showHorizontalMenu}
+        timeout={300}
+        classNames="menu"
+        unmountOnExit
+        ref={nodeRef}
+      >
+        <HorizontalMenu changeDisplayMode={changeDisplayMode}>
+          {menu.map((menuItem) => (
+            <NavItem key={menuItem}>
+              <NavLink
+                to={menuItem}
+                smooth={true}
+                duration={500}
+                spy={true}
+                offset={-49}
+                onClick={handleCloseMenu}
+              >
+                {capitalize(menuItem)}
+              </NavLink>
+            </NavItem>
+          ))}
+        </HorizontalMenu>
+      </CSSTransition>
+    </div>
   );
 };
 

@@ -39,8 +39,8 @@ const HomeSection = () => {
       <FloatingButton>
         <NavButtonLink to="profile" smooth={true} duration={500} spy={true}>
           <motion.div
-            style={{ marginTop: "-5px" }}
-            animate={{ y: 10 }}
+            style={{ marginTop: "-20px" }}
+            animate={{ y: 20 }}
             transition={{
               repeat: Infinity,
               repeatType: "reverse",

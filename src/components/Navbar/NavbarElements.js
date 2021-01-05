@@ -107,8 +107,7 @@ export const HorizontalMenu = styled.ul`
   right: 0;
   left: 0;
   background: #222;
-  border-top: 1px solid #fff1e6;
-  /* height: 0; */
+  border-top: 1px solid #888;
 `;
 
 export const NavItem = styled.li`

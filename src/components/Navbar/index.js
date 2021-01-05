@@ -43,7 +43,11 @@ const Navbar = ({ handleIsOpen }) => {
 
   useEffect(() => {
     window.addEventListener("scroll", changeNav);
+    window.addEventListener("resize", changeNav);
+
     return () => {
+      window.removeEventListener("resize", changeNav);
+
       window.removeEventListener("scroll", changeNav);
     };
   }, []);

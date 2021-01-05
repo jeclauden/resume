@@ -5,8 +5,9 @@ import { FaChevronDown } from "react-icons/fa";
 import { Link as LinkScroll } from "react-scroll";
 
 export const Header = styled.header`
-  height: 100vh;
   min-height: 375px;
+  position: relative;
+  background: violet;
 `;
 
 export const FloatingButton = styled.div`
@@ -39,14 +40,15 @@ export const HomeBG = styled.div`
   left: 0;
   right: 0;
   bottom: 0;
+  height: 100%;
   overflow: hidden;
-  background-image: url(${Image});
+  /* background-image: url(${Image}); */
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
   position: fixed;
   z-index: -5;
-  background-color: linear-gradient(250deg, #7b2ff7, #f107a3);
+  background: linear-gradient(250deg, #7b2ff7, #f107a3);
 `;
 
 export const HeaderWrapper = styled.div`

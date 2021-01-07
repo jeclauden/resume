@@ -40,10 +40,6 @@ export const FooterLinkItems = styled.div`
   margin: 16px;
   text-align: left;
   padding: 0 30px;
-
-  /* @media screen and (max-width: 420px) {
-    margin-bottom: 15px;
-  } */
 `;
 
 export const FooterLinkTitle = styled.h1`
@@ -95,6 +91,7 @@ export const SocialIconLink = styled.a`
 
 export const Logo = styled(Link)`
   margin: 0 15px;
+  padding: 5px 10px;
   cursor: pointer;
 `;
 

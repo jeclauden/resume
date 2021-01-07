@@ -46,5 +46,5 @@ export const navLinkStyles = css`
   height: 100%;
   width: 100%;
   cursor: pointer;
-  font-weight: 600;
+  font-weight: 400;
 `;

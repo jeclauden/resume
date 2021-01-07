@@ -1,6 +1,7 @@
 import React, { useState, useEffect, useRef } from "react";
 import { CSSTransition } from "react-transition-group";
 import { animateScroll as scroll } from "react-scroll";
+import "../../../src/App.css";
 import {
   Nav,
   NavContainer,
@@ -18,15 +19,27 @@ const Navbar = ({ handleIsOpen }) => {
   const [scrollNav, setScrollNav] = useState(false);
   const [showHorizontalMenu, setShowHorizontalMenu] = useState(false);
   const [changeDisplayMode, setChangeDisplayMode] = useState(false);
+  const [highlightProfile, setHighlightProfile] = useState(true);
   const profileRef = React.createRef();
+  const navLink = useRef(null);
 
   const nodeRef = useRef(null);
 
   const changeNav = () => {
     if (window.scrollY >= window.innerHeight - 70) {
       setScrollNav(true);
+      setHighlightProfile(false);
     } else {
       setScrollNav(false);
+      setHighlightProfile(true);
+    }
+  };
+
+  const changeProfile = () => {
+    if (window.scrollY >= window.innerHeight + 20) {
+      setHighlightProfile(false);
+    } else {
+      setHighlightProfile(true);
     }
   };
 
@@ -42,9 +55,11 @@ const Navbar = ({ handleIsOpen }) => {
 
   useEffect(() => {
     window.addEventListener("scroll", changeNav);
+    window.addEventListener("scroll", changeProfile);
 
     return () => {
       window.removeEventListener("scroll", changeNav);
+      window.removeEventListener("scroll", changeProfile);
     };
   }, []);
 
@@ -63,7 +78,7 @@ const Navbar = ({ handleIsOpen }) => {
       <Nav>
         <NavContainer>
           <NavLogo to="/" onClick={scrollToTop}>
-            JCN
+            JN
           </NavLogo>
           <MobileIcon onClick={handleShowMenu}>
             <BarsContainer>
@@ -75,7 +90,14 @@ const Navbar = ({ handleIsOpen }) => {
       <NavMenu scrollNav={scrollNav} numberOfMenuItems={menu.length}>
         {menu.map((menuItem) => (
           <NavItem key={menuItem} ref={profileRef}>
-            <NavLink to={menuItem} smooth={true} duration={500} spy={true}>
+            <NavLink
+              className="nav-link"
+              data-check={highlightProfile ? `${menuItem}` : "undefined"}
+              to={menuItem}
+              smooth={true}
+              duration={500}
+              spy={true}
+            >
               {capitalize(menuItem)}
             </NavLink>
           </NavItem>
@@ -92,12 +114,15 @@ const Navbar = ({ handleIsOpen }) => {
           {menu.map((menuItem) => (
             <NavItem key={menuItem}>
               <NavLink
+                className="nav-link"
+                data-check={highlightProfile ? `${menuItem}` : "undefined"}
                 to={menuItem}
                 smooth={true}
                 duration={500}
                 spy={true}
                 offset={-49}
                 onClick={handleCloseMenu}
+                ref={navLink}
               >
                 {capitalize(menuItem)}
               </NavLink>

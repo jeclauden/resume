@@ -35,11 +35,11 @@ const Footer = () => {
         <SocialMedia>
           <SocialMediaWrapper>
             <Logo to="/" onClick={scrollToTop}>
-              JCN
+              JN
             </Logo>
             <CopyRights>
               {" "}
-              JCN {new Date().getFullYear()} All Rights Reserved
+              JN {new Date().getFullYear()} All Rights Reserved
             </CopyRights>
             <SocialIcons>
               <SocialIconLink href="/" target="_blank" aria-label="Facebook">

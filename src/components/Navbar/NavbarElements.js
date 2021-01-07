@@ -114,6 +114,6 @@ export const NavLink = styled(LinkScroll)`
   ${navLinkStyles}
 
   &.active {
-    background-color: #21a39f;
+    background-color: #118ab2;
   }
 `;

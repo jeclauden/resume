@@ -31,10 +31,11 @@ export const MenuBars = styled(Menu)`
 `;
 export const BarsContainer = styled.div`
   ${normalFlex}
+  position: relative;
   border-radius: 4px;
   border: #ddd solid 1px;
-  height: 31px;
-  width: 41px;
+  height: 30px;
+  width: 40px;
 
   &:hover {
     background-color: #ddd;

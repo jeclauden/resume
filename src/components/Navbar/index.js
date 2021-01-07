@@ -1,5 +1,8 @@
 import React, { useState, useEffect, useRef } from "react";
 import { animateScroll as scroll } from "react-scroll";
+import { MenuToggle } from "../MenuToggle/MenuToggle";
+import { motion, useCycle } from "framer-motion";
+
 import {
   Nav,
   NavContainer,
@@ -18,6 +21,7 @@ const Navbar = ({ handleIsOpen }) => {
   const [changeDisplayMode, setChangeDisplayMode] = useState("block");
   const [height, setHeight] = useState(0);
   const [highlightProfile, setHightProfile] = useState(false);
+  const [isOpen, setIsOpen] = useState(false);
 
   const profileRef = useRef();
 
@@ -31,12 +35,8 @@ const Navbar = ({ handleIsOpen }) => {
 
   const changeProfileBg = () => {
     if (window.scrollY >= window.innerHeight + 20) {
-      // profileRef.current.firstChild.firstChild.style.backgroundColor =
-      //   "undefined";
       setHightProfile(false);
     } else {
-      // profileRef.current.firstChild.firstChild.style.backgroundColor =
-      //   "#118ab2";
       setHightProfile(true);
     }
   };
@@ -49,6 +49,7 @@ const Navbar = ({ handleIsOpen }) => {
   const handleCloseMobileMenu = () => {
     setChangeDisplayMode("none");
     setHeight(0);
+    setIsOpen(false);
   };
 
   const handleCloseMobileMenuOnResize = () => {
@@ -91,9 +92,12 @@ const Navbar = ({ handleIsOpen }) => {
             onClick={toggleMobileMenuHeight}
             aria-controls="horizontal-menu"
           >
-            <BarsContainer>
-              <MenuBars />
-            </BarsContainer>
+            {/* <BarsContainer> */}
+            {/* <MenuBars /> */}
+            <motion.nav initial={false} animate={isOpen ? "open" : "closed"}>
+              <MenuToggle toggle={() => setIsOpen(!isOpen)} />
+            </motion.nav>
+            {/* </BarsContainer> */}
           </MobileIcon>
         </NavContainer>
       </Nav>
@@ -128,14 +132,12 @@ const Navbar = ({ handleIsOpen }) => {
           <NavItem key={menuItem}>
             <NavLink
               className="nav-link"
-              // data-check={highlightProfile ? `${menuItem}` : "undefined"}
               to={menuItem}
               smooth={true}
               duration={500}
               spy={true}
               offset={-49}
               onClick={handleCloseMobileMenu}
-              // ref={navLink}
             >
               {capitalize(menuItem)}
             </NavLink>

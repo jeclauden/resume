@@ -1,7 +1,5 @@
 import React, { useState, useEffect, useRef } from "react";
-import { CSSTransition } from "react-transition-group";
 import { animateScroll as scroll } from "react-scroll";
-import "../../../src/App.css";
 import {
   Nav,
   NavContainer,
@@ -17,49 +15,58 @@ import {
 
 const Navbar = ({ handleIsOpen }) => {
   const [scrollNav, setScrollNav] = useState(false);
-  const [showHorizontalMenu, setShowHorizontalMenu] = useState(false);
-  const [changeDisplayMode, setChangeDisplayMode] = useState(false);
-  const [highlightProfile, setHighlightProfile] = useState(true);
-  const profileRef = React.createRef();
-  const navLink = useRef(null);
+  const [changeDisplayMode, setChangeDisplayMode] = useState("block");
+  const [height, setHeight] = useState(0);
+  const [highlightProfile, setHightProfile] = useState(false);
 
-  const nodeRef = useRef(null);
+  const profileRef = useRef();
 
-  const changeNav = () => {
+  const changeMainMenuPositionOnScroll = () => {
     if (window.scrollY >= window.innerHeight - 70) {
       setScrollNav(true);
-      setHighlightProfile(false);
     } else {
       setScrollNav(false);
-      setHighlightProfile(true);
     }
   };
 
-  const changeProfile = () => {
+  const changeProfileBg = () => {
     if (window.scrollY >= window.innerHeight + 20) {
-      setHighlightProfile(false);
+      // profileRef.current.firstChild.firstChild.style.backgroundColor =
+      //   "undefined";
+      setHightProfile(false);
     } else {
-      setHighlightProfile(true);
+      // profileRef.current.firstChild.firstChild.style.backgroundColor =
+      //   "#118ab2";
+      setHightProfile(true);
     }
   };
 
-  const handleShowMenu = () => {
-    setChangeDisplayMode(false);
-    setShowHorizontalMenu(!showHorizontalMenu);
+  const toggleMobileMenuHeight = () => {
+    setChangeDisplayMode("block");
+    setHeight(height === 0 ? "auto" : 0);
   };
 
-  const handleCloseMenu = () => {
-    setShowHorizontalMenu(false);
-    setChangeDisplayMode(true);
+  const handleCloseMobileMenu = () => {
+    setChangeDisplayMode("none");
+    setHeight(0);
+  };
+
+  const handleCloseMobileMenuOnResize = () => {
+    if (window.innerWidth > 768) {
+      setChangeDisplayMode("none");
+    } else {
+      setChangeDisplayMode("block");
+    }
   };
 
   useEffect(() => {
-    window.addEventListener("scroll", changeNav);
-    window.addEventListener("scroll", changeProfile);
-
+    window.addEventListener("scroll", changeMainMenuPositionOnScroll);
+    window.addEventListener("resize", handleCloseMobileMenuOnResize);
+    window.addEventListener("scroll", changeProfileBg);
     return () => {
-      window.removeEventListener("scroll", changeNav);
-      window.removeEventListener("scroll", changeProfile);
+      window.removeEventListener("scroll", changeMainMenuPositionOnScroll);
+      window.removeEventListener("resize", handleCloseMobileMenuOnResize);
+      window.removeEventListener("scroll", changeProfileBg);
     };
   }, []);
 
@@ -80,16 +87,23 @@ const Navbar = ({ handleIsOpen }) => {
           <NavLogo to="/" onClick={scrollToTop}>
             JN
           </NavLogo>
-          <MobileIcon onClick={handleShowMenu}>
+          <MobileIcon
+            onClick={toggleMobileMenuHeight}
+            aria-controls="horizontal-menu"
+          >
             <BarsContainer>
               <MenuBars />
             </BarsContainer>
           </MobileIcon>
         </NavContainer>
       </Nav>
-      <NavMenu scrollNav={scrollNav} numberOfMenuItems={menu.length}>
+      <NavMenu
+        scrollNav={scrollNav}
+        numberOfMenuItems={menu.length}
+        ref={profileRef}
+      >
         {menu.map((menuItem) => (
-          <NavItem key={menuItem} ref={profileRef}>
+          <NavItem key={menuItem}>
             <NavLink
               className="nav-link"
               data-check={highlightProfile ? `${menuItem}` : "undefined"}
@@ -103,33 +117,31 @@ const Navbar = ({ handleIsOpen }) => {
           </NavItem>
         ))}
       </NavMenu>
-      <CSSTransition
-        in={showHorizontalMenu}
-        timeout={300}
-        classNames="menu"
-        unmountOnExit
-        ref={nodeRef}
+
+      <HorizontalMenu
+        id="horizontal-menu"
+        duration={500}
+        height={height}
+        style={{ display: `${changeDisplayMode}` }}
       >
-        <HorizontalMenu changeDisplayMode={changeDisplayMode}>
-          {menu.map((menuItem) => (
-            <NavItem key={menuItem}>
-              <NavLink
-                className="nav-link"
-                data-check={highlightProfile ? `${menuItem}` : "undefined"}
-                to={menuItem}
-                smooth={true}
-                duration={500}
-                spy={true}
-                offset={-49}
-                onClick={handleCloseMenu}
-                ref={navLink}
-              >
-                {capitalize(menuItem)}
-              </NavLink>
-            </NavItem>
-          ))}
-        </HorizontalMenu>
-      </CSSTransition>
+        {menu.map((menuItem) => (
+          <NavItem key={menuItem}>
+            <NavLink
+              className="nav-link"
+              // data-check={highlightProfile ? `${menuItem}` : "undefined"}
+              to={menuItem}
+              smooth={true}
+              duration={500}
+              spy={true}
+              offset={-49}
+              onClick={handleCloseMobileMenu}
+              // ref={navLink}
+            >
+              {capitalize(menuItem)}
+            </NavLink>
+          </NavItem>
+        ))}
+      </HorizontalMenu>
     </div>
   );
 };

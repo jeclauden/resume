@@ -7,6 +7,10 @@ import { EducationObjects } from "../components/Resume/ResumeData";
 import { ExperienceObjects } from "../components/Resume/ResumeData";
 import Navbar from "../components/Navbar";
 
+const closeMobileMenu = () => {
+  alert("Mobile Menu Closed from Home");
+};
+
 const Home = () => {
   return (
     <div>

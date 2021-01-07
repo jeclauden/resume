@@ -3,6 +3,7 @@ import { Link as LinkRouter } from "react-router-dom";
 import { Link as LinkScroll } from "react-scroll";
 import { navLinkStyles, normalFlex } from "../../GlobalElements";
 import { ReactComponent as Menu } from "../../images/m.svg";
+import AnimateHeight from "react-animate-height";
 
 export const Nav = styled.nav`
   background: #222;
@@ -82,7 +83,7 @@ export const NavMenu = styled.ul`
   ${navMenuStyles}
   background: #222;
   position: ${({ scrollNav }) => (scrollNav ? "fixed" : "absolute")};
-  height: 300px;
+  height: auto;
   width: 120px;
   top: ${({ scrollNav }) => (scrollNav ? "70px" : "100%")};
   right: 5vw;
@@ -94,15 +95,20 @@ export const NavMenu = styled.ul`
   }
 `;
 
-export const HorizontalMenu = styled.ul`
+export const HorizontalMenu = styled(AnimateHeight)`
   ${navMenuStyles}
-  display: ${({ changeDisplayMode }) => (changeDisplayMode ? "none" : "block")};
   position: absolute;
   top: 50px;
   right: 0;
   left: 0;
   background: #222;
-  border-top: 1px solid #888;
+
+  &::before {
+    content: "";
+    background-color: #888;
+    height: 1px;
+    display: block;
+  }
 `;
 
 export const NavItem = styled.li`

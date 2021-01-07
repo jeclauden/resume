@@ -98,7 +98,7 @@ export const NavMenu = styled.ul`
 export const HorizontalMenu = styled(AnimateHeight)`
   ${navMenuStyles}
   position: absolute;
-  top: 50px;
+  top: 51px;
   right: 0;
   left: 0;
   background: #222;

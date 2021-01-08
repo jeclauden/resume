@@ -13,23 +13,6 @@ body {
   padding: 0;
 }
 
-.nav-link[data-check="profile"] {
+.nav-link[profile="profile"] {
   background-color: #118ab2;
-}
-
-/* CSSTransition classes  */
-.menu-enter {
-  height: 0;
-}
-.menu-enter-active {
-  height: 300px;
-  transition: height 500ms ease;
-}
-.menu-exit {
-  height: 300px;
-  transition: height 500ms ease;
-}
-.menu-exit-active {
-  height: 0;
-  transition: all 500ms ease;
 }

@@ -106,7 +106,7 @@ const Navbar = ({ handleIsOpen }) => {
           <NavItem key={menuItem}>
             <NavLink
               className="nav-link"
-              data-check={highlightProfile ? `${menuItem}` : "undefined"}
+              profile={highlightProfile ? `${menuItem}` : "undefined"}
               to={menuItem}
               smooth={true}
               duration={500}
@@ -128,14 +128,13 @@ const Navbar = ({ handleIsOpen }) => {
           <NavItem key={menuItem}>
             <NavLink
               className="nav-link"
-              // data-check={highlightProfile ? `${menuItem}` : "undefined"}
+              profile={highlightProfile ? `${menuItem}` : "undefined"}
               to={menuItem}
               smooth={true}
               duration={500}
               spy={true}
               offset={-49}
               onClick={handleCloseMobileMenu}
-              // ref={navLink}
             >
               {capitalize(menuItem)}
             </NavLink>

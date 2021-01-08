@@ -88,7 +88,7 @@ export const NavMenu = styled.ul`
   top: ${({ scrollNav }) => (scrollNav ? "70px" : "100%")};
   right: 5vw;
   z-index: 1000;
-  border-radius: 3px;
+  border-radius: ${({ scrollNav }) => (scrollNav ? "3px" : "0")};
 
   @media screen and (max-width: 768px) {
     display: none;

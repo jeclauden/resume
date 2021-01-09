@@ -4,8 +4,24 @@ import Image from "../../images/prog.jpg";
 import { FaChevronDown } from "react-icons/fa";
 import { Link as LinkScroll } from "react-scroll";
 
-export const Header = styled.header`
-  position: relative;
+export const Header = styled.div`
+  background: no-repeat center right fixed url(${Image});
+  -webkit-background-size: 100%;
+  -moz-background-size: 100%;
+  background-size: 100%;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  background-size: cover;
+  height: 100%;
+
+  @media only screen and (orientation: portrait) and (max-width: 768px) {
+    -webkit-background-size: auto 150%;
+    background-attachment: scroll;
+  }
+  @media only screen and (orientation: landscape) and (max-width: 768px) {
+    -webkit-background-size: 150% auto;
+    background-attachment: scroll;
+  }
 `;
 
 export const FloatingButton = styled.div`
@@ -47,7 +63,7 @@ export const HomeBG = styled.div`
   background-position: center;
   position: fixed;
   z-index: -5;
-  background-color: linear-gradient(250deg, #7b2ff7, #f107a3);
+  background: linear-gradient(250deg, #7b2ff7, #f107a3);
   @media only screen and (orientation: portrait) and (max-width: 767px) {
     position: relative;
   }

@@ -31,7 +31,7 @@ const HomeSection = () => {
 
   return (
     <Header className="header">
-      <HomeBG />
+      {/* <HomeBG /> */}
       <HeaderWrapper>
         <Name nameFontSize={nameFontSize}>Jean-Claude Ndagijimana</Name>
         <Resume>Interactive Resume</Resume>

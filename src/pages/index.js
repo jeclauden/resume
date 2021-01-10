@@ -9,7 +9,7 @@ import Navbar from "../components/Navbar";
 
 const Home = () => {
   return (
-    <div>
+    <div style={{ width: "100%" }}>
       <HomeSection />
       <Navbar />
       <Profile />

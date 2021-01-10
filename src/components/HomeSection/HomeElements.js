@@ -8,18 +8,24 @@ export const Header = styled.div`
   background: no-repeat center right fixed url(${Image});
   -webkit-background-size: 100%;
   -moz-background-size: 100%;
+  -ms-background-size: 100%;
   background-size: 100%;
   -webkit-background-size: cover;
   -moz-background-size: cover;
+  -ms-background-size: cover;
   background-size: cover;
   height: 100%;
 
   @media only screen and (orientation: portrait) and (max-width: 768px) {
     -webkit-background-size: auto 150%;
+    -moz-background-size: auto 150%;
+    -ms-background-size: auto 150%;
     background-attachment: scroll;
   }
   @media only screen and (orientation: landscape) and (max-width: 768px) {
     -webkit-background-size: 150% auto;
+    -moz-background-size: 150% auto;
+    -ms-background-size: 150% auto;
     background-attachment: scroll;
   }
 `;

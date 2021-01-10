@@ -5,7 +5,6 @@ import {
   HeaderWrapper,
   Name,
   Resume,
-  HomeBG,
   FloatingButton,
   ChevronDown,
   NavButtonLink,
@@ -30,8 +29,7 @@ const HomeSection = () => {
   }, []);
 
   return (
-    <Header className="header">
-      {/* <HomeBG /> */}
+    <Header id="header">
       <HeaderWrapper>
         <Name nameFontSize={nameFontSize}>Jean-Claude Ndagijimana</Name>
         <Resume>Interactive Resume</Resume>
@@ -39,7 +37,7 @@ const HomeSection = () => {
       <FloatingButton>
         <NavButtonLink to="profile" smooth={true} duration={500} spy={true}>
           <motion.div
-            style={{ marginTop: "-15px" }}
+            style={{ marginTop: "-10px" }}
             animate={{ y: 20 }}
             transition={{
               repeat: Infinity,

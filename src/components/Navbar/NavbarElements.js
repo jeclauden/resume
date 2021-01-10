@@ -3,7 +3,6 @@ import { Link as LinkRouter } from "react-router-dom";
 import { Link as LinkScroll } from "react-scroll";
 import { navLinkStyles, normalFlex } from "../../GlobalElements";
 import { ReactComponent as Menu } from "../../images/m.svg";
-import AnimateHeight from "react-animate-height";
 
 export const Nav = styled.nav`
   background: #222;
@@ -95,13 +94,17 @@ export const NavMenu = styled.ul`
   }
 `;
 
-export const HorizontalMenu = styled(AnimateHeight)`
+export const HorizontalMenu = styled.div`
   ${navMenuStyles}
   position: absolute;
+  display: block;
   top: 51px;
   right: 0;
   left: 0;
+  height: 0;
   background: #222;
+  transition: height 0.3s ease-in-out;
+  display: none;
 
   &::before {
     content: "";

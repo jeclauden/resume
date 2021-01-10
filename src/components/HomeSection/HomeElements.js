@@ -50,29 +50,6 @@ export const ChevronDown = styled(FaChevronDown)`
   width: 40px;
 `;
 
-export const HomeBG = styled.div`
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  height: 100%;
-  overflow: hidden;
-  background-image: url(${Image});
-  background-repeat: no-repeat;
-  background-size: cover;
-  background-position: center;
-  position: fixed;
-  z-index: -5;
-  background: linear-gradient(250deg, #7b2ff7, #f107a3);
-  @media only screen and (orientation: portrait) and (max-width: 767px) {
-    position: relative;
-  }
-  @media only screen and (orientation: landscape) and (max-width: 767px) {
-    position: relative;
-    background-attachment: scroll;
-  }
-`;
-
 export const HeaderWrapper = styled.div`
   color: #fff;
   text-align: center;

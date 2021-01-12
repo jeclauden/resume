@@ -1,6 +1,6 @@
 import styled from "styled-components";
 import { navLinkStyles, normalFlex } from "../../GlobalElements";
-import Image from "../../images/prog.jpg";
+import Image from "../../images/bg.jpg";
 import { FaChevronDown } from "react-icons/fa";
 import { Link as LinkScroll } from "react-scroll";
 
@@ -14,7 +14,7 @@ export const Header = styled.div`
     left: 0;
     right: 0;
     bottom: 0;
-    background-color: rgba(17, 138, 178, 0.4);
+    background-color: rgba(17, 138, 178, 0.3);
     z-index: 2;
   }
 `;
@@ -43,7 +43,7 @@ export const HomeBg = styled.div`
   overflow: hidden;
   background: no-repeat center right fixed url(${Image});
   background-size: cover;
-  background-position: center;
+  /* background-position: top; */
 
   @media only screen and (orientation: portrait) and (max-width: 768px) {
     background-attachment: scroll;

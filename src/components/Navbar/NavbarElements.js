@@ -97,18 +97,13 @@ export const NavMenu = styled.ul`
 export const HorizontalMenu = styled.div`
   ${navMenuStyles}
   position: absolute;
-  display: block;
   top: 51px;
   right: 0;
   left: 0;
   height: 0;
   background: #222;
-  -webkit-transition: height 0.3s ease-in-out;
-  -moz-transition: height 0.3s ease-in-out;
-  -ms-transition: height 0.3s ease-in-out;
-  -o-transition: height 0.3s ease-in-out;
   transition: height 0.3s ease-in-out;
-  display: none;
+  display: block;
 
   &::before {
     content: "";

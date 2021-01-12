@@ -1,13 +1,11 @@
 (function () {
-  buttonClick();
-  setHeaderHeight();
-  changeMobileDisplay();
-  closeMobileMenu();
+  toogleMobileMenuHeightOnButtonClick();
+  closeMobileMenuOnClick();
+  closeMobileMenuOnBigScreen();
 })();
 
-function buttonClick(params) {
-  let menuButton = document.getElementById("button");
-  menuButton.addEventListener("click", () => {
+function toogleMobileMenuHeightOnButtonClick(params) {
+  document.getElementById("button").addEventListener("click", () => {
     let mobileMenu = document.getElementById("mobile-menu");
     mobileMenu.style.display = "block";
 
@@ -19,15 +17,7 @@ function buttonClick(params) {
   });
 }
 
-function setHeaderHeight(params) {
-  var header = document.getElementById("header");
-  header.style.height = window.innerHeight + "px";
-  window.addEventListener("resize", () => {
-    header.style.height = window.innerHeight + "px";
-  });
-}
-
-function changeMobileDisplay(params) {
+function closeMobileMenuOnClick(params) {
   const mobileMenu = document.getElementById("mobile-menu");
   const navLinks = document.getElementsByClassName("nav-link");
 
@@ -39,15 +29,11 @@ function changeMobileDisplay(params) {
   }
 }
 
-function closeMobileMenu(params) {
-  const mediaQuery = window.matchMedia("(min-width: 768px)");
+function closeMobileMenuOnBigScreen() {
   const mobileMenu = document.getElementById("mobile-menu");
-  function toggleMobileMenuDisplay(e) {
-    if (e.matches) {
-      mobileMenu.style.display = "none";
-    } else {
-      mobileMenu.style.display = "block";
-    }
+  if (window.innerWidth > 768) {
+    mobileMenu.style.display = "none";
+  } else {
+    mobileMenu.style.display = "block";
   }
-  mediaQuery.addEventListener("change", toggleMobileMenuDisplay);
 }

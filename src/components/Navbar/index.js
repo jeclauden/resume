@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useRef } from "react";
+import React, { useState, useEffect } from "react";
 import { animateScroll as scroll } from "react-scroll";
 
 import {
@@ -16,9 +16,7 @@ import {
 
 const Navbar = ({ handleIsOpen }) => {
   const [scrollNav, setScrollNav] = useState(false);
-  const [highlightProfile, setHightProfile] = useState(false);
-
-  const profileRef = useRef();
+  const [highlightProfile, setHightProfile] = useState(true);
 
   const changeMainMenuPositionOnScroll = () => {
     if (window.scrollY >= window.innerHeight - 70) {
@@ -69,11 +67,7 @@ const Navbar = ({ handleIsOpen }) => {
           </MobileIcon>
         </NavContainer>
       </Nav>
-      <NavMenu
-        scrollNav={scrollNav}
-        numberOfMenuItems={menu.length}
-        ref={profileRef}
-      >
+      <NavMenu scrollNav={scrollNav} numberOfMenuItems={menu.length}>
         {menu.map((menuItem) => (
           <NavItem key={menuItem}>
             <NavLink

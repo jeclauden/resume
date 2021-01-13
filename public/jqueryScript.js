@@ -15,7 +15,9 @@ function setHeaderHeight() {
 
 function applyResize() {
   $(window).on("resize", function () {
-    $("#header").css({ height: $(window).height() + "px" });
+    // $("#header").css({ height: $(window).height() + "px" });
+    setHeaderHeight();
+    changeRegularMenuHeight();
   });
 }
 

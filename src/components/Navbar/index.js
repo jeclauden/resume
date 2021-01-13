@@ -14,20 +14,11 @@ import {
   HorizontalMenu,
 } from "./NavbarElements";
 
-const Navbar = ({ handleIsOpen }) => {
-  const [scrollNav, setScrollNav] = useState(false);
+const Navbar = () => {
   const [highlightProfile, setHightProfile] = useState(true);
 
-  const changeMainMenuPositionOnScroll = () => {
-    if (window.scrollY >= window.innerHeight - 70) {
-      setScrollNav(true);
-    } else {
-      setScrollNav(false);
-    }
-  };
-
   const changeProfileBg = () => {
-    if (window.scrollY >= window.innerHeight + 20) {
+    if (window.scrollY >= window.innerHeight * 1.1) {
       setHightProfile(false);
     } else {
       setHightProfile(true);
@@ -35,10 +26,8 @@ const Navbar = ({ handleIsOpen }) => {
   };
 
   useEffect(() => {
-    window.addEventListener("scroll", changeMainMenuPositionOnScroll);
     window.addEventListener("scroll", changeProfileBg);
     return () => {
-      window.removeEventListener("scroll", changeMainMenuPositionOnScroll);
       window.removeEventListener("scroll", changeProfileBg);
     };
   }, []);
@@ -67,9 +56,9 @@ const Navbar = ({ handleIsOpen }) => {
           </MobileIcon>
         </NavContainer>
       </Nav>
-      <NavMenu scrollNav={scrollNav} numberOfMenuItems={menu.length}>
+      <NavMenu numberOfMenuItems={menu.length} id="regular-menu">
         {menu.map((menuItem) => (
-          <NavItem key={menuItem}>
+          <NavItem key={menuItem} className="nav-item change-height">
             <NavLink
               className="nav-link"
               profile={highlightProfile ? `${menuItem}` : "undefined"}
@@ -77,6 +66,7 @@ const Navbar = ({ handleIsOpen }) => {
               smooth={true}
               duration={500}
               spy={true}
+              id={menuItem === "profile" ? "nav-profile" : "sdfsdfsdfs"}
             >
               {capitalize(menuItem)}
             </NavLink>

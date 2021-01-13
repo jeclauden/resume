@@ -1,4 +1,6 @@
-* {
+*,
+::before,
+::after {
   box-sizing: border-box;
   margin: 0;
   padding: 0;
@@ -19,9 +21,13 @@ body {
   background-color: #118ab2;
 }
 
-/* ==================================================== */
+#regular-menu.fixed {
+  position: fixed;
+  top: 80px;
+  border-radius: 3px;
+  transition: border-radius 0.5s;
+}
 
-html,
-body {
-  height: 100%;
+.nav-item.change-height {
+  height: 55px;
 }

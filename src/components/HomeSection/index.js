@@ -19,7 +19,7 @@ const HomeSection = () => {
         <Name id="name">Jean-Claude Ndagijimana</Name>
         <Resume>Interactive Resume</Resume>
       </HeaderWrapper>
-      <FloatingButton>
+      <FloatingButton id="scroll-button">
         <NavButtonLink to="profile" smooth={true} duration={500} spy={true}>
           <motion.div
             style={{ marginTop: "-10px" }}

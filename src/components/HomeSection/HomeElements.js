@@ -43,7 +43,6 @@ export const HomeBg = styled.div`
   overflow: hidden;
   background: no-repeat center right fixed url(${Image});
   background-size: cover;
-  /* background-position: top; */
 
   @media only screen and (orientation: portrait) and (max-width: 768px) {
     background-attachment: scroll;

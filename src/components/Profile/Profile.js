@@ -18,7 +18,7 @@ const Profile = () => {
   return (
     <ProfileContainer id="profile">
       <ProfileTopWrapper>
-        <ProfileTitle>Profile</ProfileTitle>
+        <ProfileTitle id="profile-title">Profile</ProfileTitle>
         <ProfileSubtitle>I am a Graduate Software Developer </ProfileSubtitle>
         <HLine />
         <AboutMeWrapper>

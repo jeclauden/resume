@@ -81,13 +81,12 @@ const navMenuStyles = css`
 export const NavMenu = styled.ul`
   ${navMenuStyles}
   background: #222;
-  position: ${({ scrollNav }) => (scrollNav ? "fixed" : "absolute")};
+  position: absolute;
   height: auto;
   width: 120px;
-  top: ${({ scrollNav }) => (scrollNav ? "70px" : "100%")};
+  top: 100%;
   right: 5vw;
   z-index: 1000;
-  border-radius: ${({ scrollNav }) => (scrollNav ? "3px" : "0")};
 
   @media screen and (max-width: 768px) {
     display: none;

@@ -1,4 +1,6 @@
-* {
+*,
+::before,
+::after {
   box-sizing: border-box;
   margin: 0;
   padding: 0;
@@ -11,8 +13,21 @@ body {
   line-height: 1.64;
   margin: 0;
   padding: 0;
+  height: 100%;
+  display: block;
 }
 
 .nav-link[profile="profile"] {
   background-color: #118ab2;
+}
+
+#regular-menu.fixed {
+  position: fixed;
+  top: 80px;
+  border-radius: 3px;
+  transition: border-radius 0.5s;
+}
+
+.nav-item.change-height {
+  height: 55px;
 }

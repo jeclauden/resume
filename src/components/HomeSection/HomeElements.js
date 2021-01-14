@@ -1,26 +1,56 @@
 import styled from "styled-components";
 import { navLinkStyles, normalFlex } from "../../GlobalElements";
-import Image from "../../images/prog.jpg";
+import Image from "../../images/bg.jpg";
 import { FaChevronDown } from "react-icons/fa";
 import { Link as LinkScroll } from "react-scroll";
 
 export const Header = styled.div`
-  background: no-repeat center right fixed url(${Image});
-  -webkit-background-size: 100%;
-  -moz-background-size: 100%;
-  background-size: 100%;
-  -webkit-background-size: cover;
-  -moz-background-size: cover;
-  background-size: cover;
+  display: block;
+  position: relative;
+  &:before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(17, 138, 178, 0.3);
+    z-index: 2;
+  }
+`;
+
+export const HeaderWrapper = styled.div`
+  color: #fff;
+  text-align: center;
+  z-index: 444;
+  position: relative;
+  top: 32%;
+  left: 0;
+  right: 0;
+  @media screen and (min-width: 768px) {
+    padding: 0 35px;
+  }
+`;
+
+export const HomeBg = styled.div`
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  width: 100%;
   height: 100%;
+  overflow: hidden;
+  background: no-repeat center right fixed url(${Image});
+  background-size: cover;
 
   @media only screen and (orientation: portrait) and (max-width: 768px) {
-    -webkit-background-size: auto 150%;
     background-attachment: scroll;
+    background-size: auto 200%;
   }
-  @media only screen and (orientation: landscape) and (max-width: 768px) {
-    -webkit-background-size: 150% auto;
+  @media only screen and (orientation: landscape) and (max-height: 540px) {
     background-attachment: scroll;
+    background-size: auto 200%;
   }
 `;
 
@@ -32,6 +62,7 @@ export const FloatingButton = styled.div`
   width: 120px;
   right: 5vw;
   bottom: 0;
+  z-index: 10;
 
   @media screen and (max-width: 768px) {
     left: 0;
@@ -50,54 +81,26 @@ export const ChevronDown = styled(FaChevronDown)`
   width: 40px;
 `;
 
-export const HomeBG = styled.div`
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  height: 100%;
-  overflow: hidden;
-  background-image: url(${Image});
-  background-repeat: no-repeat;
-  background-size: cover;
-  background-position: center;
-  position: fixed;
-  z-index: -5;
-  background: linear-gradient(250deg, #7b2ff7, #f107a3);
-  @media only screen and (orientation: portrait) and (max-width: 767px) {
-    position: relative;
-  }
-  @media only screen and (orientation: landscape) and (max-width: 767px) {
-    position: relative;
-    background-attachment: scroll;
-  }
-`;
-
-export const HeaderWrapper = styled.div`
-  color: #fff;
-  text-align: center;
-  z-index: 444;
-  position: absolute;
-  top: 32%;
-  left: 0;
-  right: 0;
-  @media screen and (min-width: 768px) {
-    padding: 0 35px;
-  }
-`;
-
 export const Name = styled.h1`
   padding-bottom: 20px;
   border-bottom: 1px solid #fff;
   border-bottom-color: rgba(255, 255, 255, 0.36);
   display: inline-block;
-  font-size: ${({ nameFontSize }) => (nameFontSize ? "2rem" : "65px")};
+
+  @media screen and (min-width: 769px) {
+    font-size: 65px;
+  }
 
   @media screen and (max-width: 768px) {
     font-size: 2rem;
   }
 
   @media screen and (max-width: 480px) {
+    font-size: 25px;
+    margin: 0 20px;
+  }
+
+  @media screen and (max-height: 540px) {
     font-size: 25px;
     margin: 0 20px;
   }

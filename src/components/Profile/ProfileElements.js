@@ -40,10 +40,11 @@ export const ProfileSubtitle = styled.p`
 `;
 
 export const HLine = styled.hr`
-  height: 2px;
-  color: red;
+  border-bottom: 1px solid #fff;
+  border-bottom-color: rgba(255, 255, 255, 0.36);
   margin-top: 35px;
   width: 100%;
+  display: inline-block;
 `;
 
 export const AboutMe = styled.p``;

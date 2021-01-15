@@ -44,7 +44,7 @@ const Navbar = () => {
 
   return (
     <div style={{ position: "sticky", top: "-2px" }}>
-      <Nav>
+      <Nav id="navbar">
         <NavContainer>
           <NavLogo to="/" onClick={scrollToTop}>
             JN

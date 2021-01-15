@@ -7,6 +7,7 @@ $(function () {
   orientationChangeHandler();
   fixRegularMenuPosition();
   changeRegularMenuHeight();
+  closeMobileMenuByClickingAnywhere();
 });
 
 function setHeaderHeight() {
@@ -15,7 +16,6 @@ function setHeaderHeight() {
 
 function applyResize() {
   $(window).on("resize", function () {
-    // $("#header").css({ height: $(window).height() + "px" });
     setHeaderHeight();
     changeRegularMenuHeight();
   });
@@ -70,4 +70,21 @@ function fixRegularMenu() {
   } else {
     $("#regular-menu").removeClass("fixed");
   }
+}
+
+function closeMobileMenuByClickingAnywhere() {
+  $(document).on("click", function (menu) {
+    if (
+      $(menu.target).closest("#mobile-menu").length === 0 &&
+      $(menu.target).closest("#navbar").length === 0
+    ) {
+      if (
+        $("#mobile-menu").css("display") === "block" &&
+        $("#mobile-menu").css("height") === "300px"
+      ) {
+        $("#mobile-menu").css("display", "none");
+        $("#mobile-menu").css("height", "0px");
+      }
+    }
+  });
 }

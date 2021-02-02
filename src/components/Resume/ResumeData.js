@@ -1,8 +1,8 @@
 export const EducationObjects = [
   {
     mainTitle: "University of South Australia",
-    years: "Aug 2006 - Jan 2007",
-    subtitle: "Software Development",
+    years: "Jul 2017 - Nov 2020",
+    subtitle: "Bechelor of IT (Software Development)",
     description: `Lorem ipsum, or lipsum as it is sometimes known, is dummy text used in
     laying out print, graphic or web designs. The passage is attributed to
     an unknown typesetter in the 15th century who is thought to have

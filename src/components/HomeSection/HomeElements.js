@@ -1,6 +1,5 @@
 import styled from "styled-components";
 import { navLinkStyles, normalFlex } from "../../GlobalElements";
-import Image from "../../images/bg.jpg";
 import { FaChevronDown } from "react-icons/fa";
 import { Link as LinkScroll } from "react-scroll";
 
@@ -14,7 +13,52 @@ export const Header = styled.div`
     left: 0;
     right: 0;
     bottom: 0;
-    background-color: rgba(17, 138, 178, 0.3);
+    background-image: repeating-linear-gradient(
+        45deg,
+        hsla(64, 83%, 54%, 0.05) 0px,
+        hsla(64, 83%, 54%, 0.05) 1px,
+        transparent 1px,
+        transparent 11px,
+        hsla(64, 83%, 54%, 0.05) 11px,
+        hsla(64, 83%, 54%, 0.05) 12px,
+        transparent 12px,
+        transparent 32px
+      ),
+      repeating-linear-gradient(
+        90deg,
+        hsla(64, 83%, 54%, 0.05) 0px,
+        hsla(64, 83%, 54%, 0.05) 1px,
+        transparent 1px,
+        transparent 11px,
+        hsla(64, 83%, 54%, 0.05) 11px,
+        hsla(64, 83%, 54%, 0.05) 12px,
+        transparent 12px,
+        transparent 32px
+      ),
+      repeating-linear-gradient(
+        0deg,
+        hsla(64, 83%, 54%, 0.05) 0px,
+        hsla(64, 83%, 54%, 0.05) 1px,
+        transparent 1px,
+        transparent 11px,
+        hsla(64, 83%, 54%, 0.05) 11px,
+        hsla(64, 83%, 54%, 0.05) 12px,
+        transparent 12px,
+        transparent 32px
+      ),
+      repeating-linear-gradient(
+        135deg,
+        hsla(64, 83%, 54%, 0.05) 0px,
+        hsla(64, 83%, 54%, 0.05) 1px,
+        transparent 1px,
+        transparent 11px,
+        hsla(64, 83%, 54%, 0.05) 11px,
+        hsla(64, 83%, 54%, 0.05) 12px,
+        transparent 12px,
+        transparent 32px
+      ),
+      linear-gradient(90deg, rgb(29, 53, 87), rgb(69, 123, 157));
+    background-attachment: fixed;
     z-index: 2;
   }
 `;
@@ -29,28 +73,6 @@ export const HeaderWrapper = styled.div`
   right: 0;
   @media screen and (min-width: 768px) {
     padding: 0 35px;
-  }
-`;
-
-export const HomeBg = styled.div`
-  position: absolute;
-  top: 0;
-  right: 0;
-  bottom: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  overflow: hidden;
-  background: no-repeat center right fixed url(${Image});
-  background-size: cover;
-
-  @media only screen and (orientation: portrait) and (max-width: 768px) {
-    background-attachment: scroll;
-    background-size: auto 200%;
-  }
-  @media only screen and (orientation: landscape) and (max-height: 540px) {
-    background-attachment: scroll;
-    background-size: auto 200%;
   }
 `;
 

@@ -8,13 +8,11 @@ import {
   FloatingButton,
   ChevronDown,
   NavButtonLink,
-  HomeBg,
 } from "./HomeElements";
 
 const HomeSection = () => {
   return (
     <Header id="header">
-      <HomeBg />
       <HeaderWrapper>
         <Name id="name">Jean-Claude Ndagijimana</Name>
         <Resume>Interactive Resume</Resume>

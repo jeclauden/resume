@@ -40,7 +40,7 @@ const Navbar = () => {
     return str.charAt(0).toUpperCase() + str.slice(1);
   };
 
-  const menu = ["profile", "education", "experience", "projects", "contact"];
+  const menu = ["profile", "education", "experience", "contact"];
 
   return (
     <div style={{ position: "sticky", top: "-2px" }}>

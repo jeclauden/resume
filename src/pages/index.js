@@ -1,11 +1,14 @@
 import React from "react";
-import ResumeEntry from "../components/Resume/ResumeEntry";
+import Education from "../components/Resume/Education";
 import Footer from "../components/Footer";
 import HomeSection from "../components/HomeSection";
 import Profile from "../components/Profile/Profile";
-import { EducationObjects } from "../components/Resume/ResumeData";
-import { ExperienceObjects } from "../components/Resume/ResumeData";
+import {
+  ExperienceObjects,
+  EducationObjects,
+} from "../components/Resume/ResumeData";
 import Navbar from "../components/Navbar";
+import Experience from "../components/Resume/Experience";
 
 const Home = () => {
   return (
@@ -13,13 +16,13 @@ const Home = () => {
       <HomeSection />
       <Navbar />
       <Profile />
-      <ResumeEntry
+      <Education
         title="Education"
         data={EducationObjects}
         bgColor={"#f0efeb"}
       />
-      <ResumeEntry
-        title="Experience"
+      <Experience
+        title="Software Projects"
         data={ExperienceObjects}
         bgColor={"#B7B7A4"}
       />

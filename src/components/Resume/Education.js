@@ -1,10 +1,10 @@
 import React from "react";
 import { Container, MainTitle, ContainerWrapper } from "./Elements";
-import Main from "./Main";
+import EducationItem from "./EducationItem";
 
-const ResumeEntry = (props) => {
+const Education = (props) => {
   const content = props.data.map((object) => (
-    <Main {...object} key={object.mainTitle} />
+    <EducationItem {...object} key={object.mainTitle} />
   ));
   return (
     <Container bgColor={props.bgColor} id={props.title.toLowerCase()}>
@@ -16,4 +16,4 @@ const ResumeEntry = (props) => {
   );
 };
 
-export default ResumeEntry;
+export default Education;

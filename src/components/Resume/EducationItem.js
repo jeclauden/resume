@@ -9,7 +9,7 @@ import {
   YearsPara,
 } from "./MainElements";
 
-const Main = ({ mainTitle, years, subtitle, description }) => {
+const EducationItem = ({ mainTitle, years, subtitle, description }) => {
   return (
     <MainContainer>
       <ColumnOne>
@@ -24,4 +24,4 @@ const Main = ({ mainTitle, years, subtitle, description }) => {
   );
 };
 
-export default Main;
+export default EducationItem;

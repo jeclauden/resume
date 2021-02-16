@@ -24,7 +24,7 @@ const Home = () => {
       <Experience
         title="Software Projects"
         data={ExperienceObjects}
-        bgColor={"#B7B7A4"}
+        bgColor={"#ECEEF6"}
       />
       <Footer />
     </div>

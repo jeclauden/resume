@@ -4,7 +4,7 @@ import ExperienceItem from "./ExperienceItem";
 
 function Experience(props) {
   const content = props.data.map((object) => (
-    <ExperienceItem {...object} key={object.mainTitle} />
+    <ExperienceItem {...object} key={object.subtitle} />
   ));
   return (
     <Container bgColor={props.bgColor} id="experience">

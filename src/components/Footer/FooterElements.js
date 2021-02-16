@@ -42,9 +42,11 @@ export const FooterLinkItems = styled.div`
   padding: 0 30px;
 `;
 
-export const FooterLinkTitle = styled.h1`
-  font-size: 14px;
+export const MailLink = styled.a`
+  font-size: 15px;
   margin-bottom: 16px;
+  text-decoration: none;
+  color: #fff;
 `;
 
 export const FooterLink = styled(Link)`

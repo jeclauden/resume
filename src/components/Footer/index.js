@@ -8,7 +8,7 @@ import {
   FooterLinksContainer,
   FooterLinksWrapper,
   FooterLinkItems,
-  FooterLinkTitle,
+  MailLink,
   SocialMedia,
   SocialIcons,
   SocialIconLink,
@@ -24,11 +24,13 @@ const Footer = () => {
   return (
     <FooterContainer id="contact">
       <FooterWrapper>
-        <h1>Burundi</h1>
+        <h2 style={{ fontSize: "54px", fontWeight: "300" }}>Contact</h2>
         <FooterLinksContainer>
           <FooterLinksWrapper>
             <FooterLinkItems>
-              <FooterLinkTitle>Videos</FooterLinkTitle>
+              <MailLink href="mailto:jeclaudeb@gmail.com">
+                Send me an email?
+              </MailLink>
             </FooterLinkItems>
           </FooterLinksWrapper>
         </FooterLinksContainer>
@@ -37,12 +39,13 @@ const Footer = () => {
             <Logo to="/" onClick={scrollToTop}>
               JN
             </Logo>
-            <CopyRights>
-              {" "}
-              JN {new Date().getFullYear()} All Rights Reserved
-            </CopyRights>
+            <CopyRights> &copy; {new Date().getFullYear()} Claude</CopyRights>
             <SocialIcons>
-              <SocialIconLink href="/" target="_blank" aria-label="Facebook">
+              <SocialIconLink
+                href="https://www.facebook.com/jeclauden"
+                target="_blank"
+                aria-label="Facebook"
+              >
                 <FaFacebook />
               </SocialIconLink>
               <SocialIconLink
@@ -51,12 +54,6 @@ const Footer = () => {
                 aria-label="LinkedIn"
               >
                 <FaLinkedin />
-              </SocialIconLink>
-              <SocialIconLink href="/" target="_blank" aria-label="Youtube">
-                <FaYoutube />
-              </SocialIconLink>
-              <SocialIconLink href="/" target="_blank" aria-label="Twitter">
-                <FaTwitter />
               </SocialIconLink>
             </SocialIcons>
           </SocialMediaWrapper>

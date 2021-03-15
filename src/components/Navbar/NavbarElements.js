@@ -2,7 +2,6 @@ import styled, { css } from "styled-components";
 import { Link as LinkRouter } from "react-router-dom";
 import { Link as LinkScroll } from "react-scroll";
 import { navLinkStyles, normalFlex } from "../../GlobalElements";
-import { ReactComponent as Menu } from "../../images/m.svg";
 
 export const Nav = styled.nav`
   background: #222;
@@ -19,29 +18,10 @@ export const NavContainer = styled.div`
   z-index: 1;
   width: 100%;
   @media screen and (max-width: 768px) {
-    padding: 10px 15px;
+    padding: 6px 15px;
   }
 `;
-export const MenuBars = styled(Menu)`
-  height: 20px;
-  width: 40px;
-  fill: #888;
-  font-size: 0.5rem;
-`;
-export const BarsContainer = styled.div`
-  ${normalFlex}
-  border-radius: 4px;
-  border: #ddd solid 1px;
-  height: 31px;
-  width: 41px;
 
-  &:hover {
-    background-color: #ddd;
-    ${MenuBars} {
-      fill: #222;
-    }
-  }
-`;
 
 export const NavLogo = styled(LinkRouter)`
   display: none;
@@ -58,15 +38,21 @@ export const NavLogo = styled(LinkRouter)`
   }
 `;
 
-export const MobileIcon = styled.div`
+export const MenuButton = styled.div`
   display: none;
-  font-size: 1.2rem;
+  cursor: pointer;
 
   @media screen and (max-width: 768px) {
-    display: block;
-    cursor: pointer;
-    color: #fff;
+    display: inline-block;
   }
+`;
+
+export const MenuButtonBar = styled.div`
+  width: 35px;
+  height: 5px;
+  background-color: #fff;
+  margin: 6px 0;
+  transition: 0.4s;
 `;
 
 const navMenuStyles = css`
@@ -102,7 +88,6 @@ export const HorizontalMenu = styled.div`
   height: 0;
   background: #222;
   transition: height 0.3s ease-in-out;
-  display: block;
 
   &::before {
     content: "";

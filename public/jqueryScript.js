@@ -18,6 +18,7 @@ function applyResize() {
   $(window).on("resize", function () {
     setHeaderHeight();
     changeRegularMenuHeight();
+    changeMobileMenuDisplay();
   });
 }
 
@@ -56,11 +57,9 @@ function orientationChangeHandler(params) {
 
 function fixRegularMenuPosition() {
   regularMenuPositionTop = $("#scroll-button").offset().top;
-
   $(window).on("scroll", function () {
     fixRegularMenu();
   });
-
   fixRegularMenu();
 }
 
@@ -80,10 +79,11 @@ function closeMobileMenuByClickingAnywhere() {
     ) {
       if (
         $("#mobile-menu").css("display") === "block" &&
-        $("#mobile-menu").css("height") === "300px"
+        $("#mobile-menu").height() > 100
       ) {
         $("#mobile-menu").css("display", "none");
         $("#mobile-menu").css("height", "0px");
+        $("#button").removeClass("open");
       }
     }
   });

@@ -58,13 +58,17 @@ export const AboutMeWrapper = styled.div`
 `;
 
 export const ImageContainer = styled.div`
-  ${normalFlex}
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 `;
 
 export const ProfileImage = styled.img`
-  margin-top: 30px;
-  width: 100%;
-  height: 100%;
+  margin: 30px 0;
+  width: 50%;
+  height: 50%;
+  border-radius: 50%;
 `;
 
 export const AboutMeTitle = styled.h2`
@@ -74,3 +78,9 @@ export const AboutMeTitle = styled.h2`
   font-weight: 300;
   margin-bottom: 10px;
 `;
+
+export const Location = styled.div`
+${normalFlex}
+justify-content: center;
+align-items: start;
+`

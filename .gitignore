@@ -23,5 +23,5 @@ yarn-debug.log*
 yarn-error.log*
 
 # firebase
-.eslintcache
-.firebase/hosting.YnVpbGQ.cache
+*.eslintcache
+*.cache

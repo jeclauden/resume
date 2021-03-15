@@ -25,7 +25,7 @@ const Home = () => {
         title="Software Projects"
         data={ExperienceObjects}
         bgColor={"#ECEEF6"}
-      />
+      /> 
       <Footer />
     </div>
   );

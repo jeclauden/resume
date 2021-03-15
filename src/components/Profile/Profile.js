@@ -37,7 +37,7 @@ const Profile = () => {
             <ProfileImage src={Image} />
             <Location> 
              <FaMapMarkerAlt/>
-             <p style={{marginLeft: "5px"}}>Based in Ottoway, South Australia. Australia.</p>
+             <p style={{marginLeft: "5px"}}>Based in Ottoway, SA. Australia.</p>
             </Location>
           </ImageContainer>
         </AboutMeWrapper>

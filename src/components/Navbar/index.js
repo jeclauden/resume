@@ -5,12 +5,11 @@ import {
   Nav,
   NavContainer,
   NavLogo,
-  MobileIcon,
+  MenuButton,
   NavMenu,
   NavItem,
   NavLink,
-  BarsContainer,
-  MenuBars,
+  MenuButtonBar,
   HorizontalMenu,
 } from "./NavbarElements";
 
@@ -49,11 +48,11 @@ const Navbar = () => {
           <NavLogo to="/" onClick={scrollToTop}>
             JN
           </NavLogo>
-          <MobileIcon id="button">
-            <BarsContainer>
-              <MenuBars />
-            </BarsContainer>
-          </MobileIcon>
+          <MenuButton id="button">
+            <MenuButtonBar  className="bar-one"/>
+            <MenuButtonBar  className="bar-two"/>
+            <MenuButtonBar  className="bar-three"/>
+          </MenuButton>
         </NavContainer>
       </Nav>
       <NavMenu numberOfMenuItems={menu.length} id="regular-menu">
@@ -66,7 +65,7 @@ const Navbar = () => {
               smooth={true}
               duration={500}
               spy={true}
-              id={menuItem === "profile" ? "nav-profile" : "sdfsdfsdfs"}
+              id={menuItem === "profile" ? "nav-profile" : "undefined"}
             >
               {capitalize(menuItem)}
             </NavLink>

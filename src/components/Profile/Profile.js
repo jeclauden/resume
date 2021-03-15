@@ -2,7 +2,6 @@ import React from "react";
 import Image from "../../images/claude.jpg";
 import { FaMapMarkerAlt } from "react-icons/fa";
 
-
 import {
   ProfileContainer,
   ProfileTitle,

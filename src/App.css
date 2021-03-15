@@ -31,3 +31,20 @@ body {
 .nav-item.change-height {
   height: 55px;
 }
+
+/* BURGER BUTTON BARS ANIMATION */
+
+/* Rotate first bar */
+.open .bar-one {
+  transform: rotate(-45deg) translate(-8px, 8px) ;
+}
+
+/* Fade out the second bar */
+.open .bar-two {
+  opacity: 0;
+}
+
+/* Rotate last bar */
+.open .bar-three {
+  transform: rotate(45deg) translate(-8px, -8px) ;
+}

@@ -59,6 +59,9 @@ const Footer = () => {
                 <FaLinkedin />
               </SocialIconLink>
             </SocialIcons>
+            <p style={{ fontSize: "12px" }}>
+              I built this website as a away of learning React
+            </p>
           </SocialMediaWrapper>
         </SocialMedia>
       </FooterWrapper>

@@ -1,5 +1,5 @@
 import React from "react";
-import { FaFacebook, FaLinkedin,  } from "react-icons/fa";
+import { FaFacebook, FaLinkedin } from "react-icons/fa";
 import { animateScroll as scroll } from "react-scroll";
 
 import {
@@ -28,8 +28,11 @@ const Footer = () => {
         <FooterLinksContainer>
           <FooterLinksWrapper>
             <FooterLinkItems>
-              <MailLink href="mailto:jeclaudeb@gmail.com" title="This opens your default Mail App">
-                Want to send me an email? Click here.
+              <MailLink
+                href="mailto:jeclaudeb@gmail.com"
+                title="This opens your default Mail App"
+              >
+                Want to send me an email? Click here
               </MailLink>
             </FooterLinkItems>
           </FooterLinksWrapper>

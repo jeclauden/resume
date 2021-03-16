@@ -32,7 +32,7 @@ const Footer = () => {
                 href="mailto:jeclaudeb@gmail.com"
                 title="This opens your default Mail App"
               >
-                Want to send me an email? Click here
+                Want to send me an email? Click here.
               </MailLink>
             </FooterLinkItems>
           </FooterLinksWrapper>

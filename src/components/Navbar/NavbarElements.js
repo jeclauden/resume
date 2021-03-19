@@ -18,10 +18,9 @@ export const NavContainer = styled.div`
   z-index: 1;
   width: 100%;
   @media screen and (max-width: 768px) {
-    padding: 6px 15px;
+    padding: 6px 5px;
   }
 `;
-
 
 export const NavLogo = styled(LinkRouter)`
   display: none;
@@ -35,24 +34,37 @@ export const NavLogo = styled(LinkRouter)`
     font-weight: bold;
     text-decoration: none;
     display: block;
+    margin-left: 10px;
   }
 `;
 
 export const MenuButton = styled.div`
   display: none;
   cursor: pointer;
+  padding: 10px;
+  /* margin-right: 5px; */
+  border-radius: 45px;
+  height: 45px;
+  width: 45px;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  &:hover {
+    background-color: rgba(255, 255, 255, 0.08);
+  }
 
   @media screen and (max-width: 768px) {
-    display: inline-block;
+    display: flex;
   }
 `;
 
 export const MenuButtonBar = styled.div`
-  width: 35px;
-  height: 5px;
+  width: 22px;
+  height: 3px;
   background-color: #fff;
-  margin: 6px 0;
   transition: 0.4s;
+  margin: 2px 0;
 `;
 
 const navMenuStyles = css`
@@ -82,7 +94,6 @@ export const NavMenu = styled.ul`
 export const HorizontalMenu = styled.div`
   ${navMenuStyles}
   position: absolute;
-  top: 51px;
   right: 0;
   left: 0;
   height: 0;

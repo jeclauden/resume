@@ -49,9 +49,9 @@ const Navbar = () => {
             JN
           </NavLogo>
           <MenuButton id="button">
-            <MenuButtonBar  className="bar-one"/>
-            <MenuButtonBar  className="bar-two"/>
-            <MenuButtonBar  className="bar-three"/>
+            <MenuButtonBar className="bar-one" />
+            <MenuButtonBar className="bar-two" />
+            <MenuButtonBar className="bar-three" />
           </MenuButton>
         </NavContainer>
       </Nav>
@@ -83,7 +83,7 @@ const Navbar = () => {
               smooth={true}
               duration={500}
               spy={true}
-              offset={-49}
+              offset={-58}
             >
               {capitalize(menuItem)}
             </NavLink>

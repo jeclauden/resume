@@ -22,6 +22,12 @@ function applyResize() {
   });
 }
 
+function resizeHandler(params) {
+  setHeaderHeight();
+  changeRegularMenuHeight();
+  changeMobileMenuDisplay();
+}
+
 function changeMobileMenuDisplay(params) {
   if ($(window).width() > 768) {
     $("#mobile-menu").css("display", "none");
@@ -40,13 +46,9 @@ function changeRegularMenuHeight(params) {
 
 function handleOrientationChange(e) {
   if (e.matches) {
-    changeRegularMenuHeight();
-    changeMobileMenuDisplay();
-    setHeaderHeight();
+    resizeHandler();
   } else {
-    changeRegularMenuHeight();
-    changeMobileMenuDisplay();
-    setHeaderHeight();
+    resizeHandler();
   }
 }
 

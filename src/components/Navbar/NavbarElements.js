@@ -6,9 +6,11 @@ import { navLinkStyles, normalFlex } from "../../GlobalElements";
 export const Nav = styled.nav`
   background: #222;
   ${normalFlex}
-
+  height: 60px;
+  display: none;
   @media screen and (max-width: 768px) {
     width: 100%;
+    display: block;
   }
 `;
 
@@ -42,7 +44,6 @@ export const MenuButton = styled.div`
   display: none;
   cursor: pointer;
   padding: 10px;
-  /* margin-right: 5px; */
   border-radius: 45px;
   height: 45px;
   width: 45px;
@@ -94,6 +95,7 @@ export const NavMenu = styled.ul`
 export const HorizontalMenu = styled.div`
   ${navMenuStyles}
   position: absolute;
+  top: 60px;
   right: 0;
   left: 0;
   height: 0;

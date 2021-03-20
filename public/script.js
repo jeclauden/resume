@@ -1,9 +1,7 @@
 (function () {
   toogleMobileMenuHeightOnButtonClick();
-  closeMobileMenuOnClick();
-  closeMobileMenuOnBigScreen();
+  closeMobileMenuOnClickingNavLink();
   animateButtonBars();
-  mobileMenuTop();
 })();
 
 function toogleMobileMenuHeightOnButtonClick(params) {
@@ -13,14 +11,14 @@ function toogleMobileMenuHeightOnButtonClick(params) {
 
     if (mobileMenu.offsetHeight === 0) {
       let height = mobileMenu.childElementCount * 60;
-      mobileMenu.style.height = height + "px";
+      mobileMenu.style.height = `${height}px`;
     } else {
       mobileMenu.style.height = 0;
     }
   });
 }
 
-function closeMobileMenuOnClick(params) {
+function closeMobileMenuOnClickingNavLink(params) {
   const mobileMenu = document.getElementById("mobile-menu");
   const navLinks = document.getElementsByClassName("nav-link");
 
@@ -33,23 +31,9 @@ function closeMobileMenuOnClick(params) {
   }
 }
 
-function closeMobileMenuOnBigScreen() {
-  const mobileMenu = document.getElementById("mobile-menu");
-  if (window.innerWidth > 768) {
-    mobileMenu.style.display = "none";
-  } else {
-    mobileMenu.style.display = "block";
-  }
-}
-
 function animateButtonBars() {
   const menuButton = document.getElementById("button");
   menuButton.addEventListener("click", () => {
     menuButton.classList.toggle("open");
   });
-}
-
-function mobileMenuTop(params) {
-  const height = document.getElementById("navbar").clientHeight;
-  document.getElementById("mobile-menu").style.top = height;
 }

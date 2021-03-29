@@ -3,7 +3,7 @@ export const EducationObjects = [
     mainTitle: "University of South Australia",
     years: "Jul 2017 - Nov 2020",
     subtitle: "Bechelor of IT (Software Development)",
-    description: `I gained a broad range of knowledge in Design Thinking and Digital innovation, Software Developement Life Cycle (in Systems Analysis and Design), Data Structures (Java), Database, Web Develpment (including C# and Angular), commonly used Design Patterns (C++), Object Orientated Programming. I aslo obtained basic knowledge in Cloud and Concurrent Computing, Network Fundamentals, and IT Project Management (Prince2).`,
+    description: `I gained a broad range of knowledge in Design Thinking and Digital innovation, Software Developement Life Cycle (in Systems Analysis and Design), Data Structures (Java), Relational Databases, Web Develpment (including C# and Angular), some commonly used Design Patterns (C++), Object Orientated Programming. I aslo obtained basic knowledge in Cloud and Concurrent Computing, Network Fundamentals, and IT Project Management.`,
   },
   {
     mainTitle: "Underndale High School",
@@ -27,7 +27,6 @@ export const EmploymentObjects = [
     jobRole: "Intern Web Developer",
     experience: [
       "Developed a web-based interactive dashboard (Real Time Change and Test Data Dashboard) to dynamically display projects and Request for Change (RFCs) and associated test data information.",
-      "Learned to use AdobeXD on spot.",
       "Designed and continuously updated the dashboard according to the stakeholders’ feedbacks.",
       "Documented and communicated design decisions and project challenges with stakeholders.",
       "Utilised: AdobeXD, HTML, CSS, SASS, JavaScript, Bootstrap and Git.",

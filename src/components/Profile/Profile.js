@@ -28,7 +28,7 @@ const Profile = () => {
           <AboutMe>
             Goal-oriented and determined Bachelor of Information Technology
             (Software Development) graduate seeking to take on challenges of
-            developing technology solutions. Has university background in
+            developing technology solutions. I have university background in
             software development and worked on various projects and developed
             applications using various programming languages including Java, C++
             and C#.

@@ -1,14 +1,9 @@
 import React from "react";
 import { FaFacebook, FaLinkedin } from "react-icons/fa";
 import { animateScroll as scroll } from "react-scroll";
+import ContactForm from "./ContactForm";
 
 import {
-  FooterContainer,
-  FooterWrapper,
-  FooterLinksContainer,
-  FooterLinksWrapper,
-  FooterLinkItems,
-  MailLink,
   SocialMedia,
   SocialIcons,
   SocialIconLink,
@@ -16,27 +11,21 @@ import {
   Logo,
   CopyRights,
 } from "../Footer/FooterElements";
+import { Container, ContainerWrapper } from "../Resume/Elements";
 
 const Footer = () => {
   const scrollToTop = () => {
     scroll.scrollToTop();
   };
   return (
-    <FooterContainer id="contact">
-      <FooterWrapper>
-        <h2 style={{ fontSize: "54px", fontWeight: "300" }}>Contact</h2>
-        <FooterLinksContainer>
-          <FooterLinksWrapper>
-            <FooterLinkItems>
-              <MailLink
-                href="mailto:jeclaudeb@gmail.com"
-                title="This opens your default Mail App"
-              >
-                Want to send me an email? Click here.
-              </MailLink>
-            </FooterLinkItems>
-          </FooterLinksWrapper>
-        </FooterLinksContainer>
+    <Container id="contact" style={{ paddingTop: "200px" }}>
+      <ContainerWrapper>
+        <h2
+          style={{ fontSize: "54px", fontWeight: "300", textAlign: "center" }}
+        >
+          Contact
+        </h2>
+        <ContactForm />
         <SocialMedia>
           <SocialMediaWrapper>
             <Logo to="/" onClick={scrollToTop}>
@@ -64,8 +53,8 @@ const Footer = () => {
             </p>
           </SocialMediaWrapper>
         </SocialMedia>
-      </FooterWrapper>
-    </FooterContainer>
+      </ContainerWrapper>
+    </Container>
   );
 };
 

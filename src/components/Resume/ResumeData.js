@@ -6,7 +6,7 @@ export const EducationObjects = [
     description: `I gained a broad range of knowledge in Design Thinking and Digital innovation, Software Developement Life Cycle (in Systems Analysis and Design), Data Structures (Java), Relational Databases, Web Develpment (including C# and Angular), some commonly used Design Patterns (C++), Object Orientated Programming. I aslo obtained basic knowledge in Cloud and Concurrent Computing, Network Fundamentals, and IT Project Management.`,
   },
   {
-    mainTitle: "Underndale High School",
+    mainTitle: "Underdale High School",
     years: "Jul 2007 - Dec 2009",
     subtitle: "South Australian Certificate of Education",
     description: `This is where I got my high school education. I started in year 10 because I was a bit too old. \nIn year 12, I studied Specialist Mathematics, Mathematical Methods, Physics, Chemistry and ESL Studies.`,

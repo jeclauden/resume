@@ -1,5 +1,7 @@
 import React from "react";
 import Image from "../../images/claude.jpg";
+import Image2 from "../../images/Log.svg";
+
 import { FaMapMarkerAlt } from "react-icons/fa";
 
 import {
@@ -41,6 +43,7 @@ const Profile = () => {
                 Based in Ottoway, SA. Australia.
               </p>
             </Location>
+            <img style={{ width: "50%", height: "50%" }} src={Image2} />
           </ImageContainer>
         </AboutMeWrapper>
       </ProfileTopWrapper>

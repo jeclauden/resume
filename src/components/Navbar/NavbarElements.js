@@ -99,6 +99,7 @@ export const HorizontalMenu = styled.div`
   right: 0;
   left: 0;
   height: 0;
+  z-index: 1000;
   background: #222;
   transition: height 0.3s ease-in-out;
 

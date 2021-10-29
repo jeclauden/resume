@@ -1,24 +1,29 @@
 import styled from "styled-components";
 import { Link } from "react-scroll";
+import { normalFlex } from "../../GlobalElements";
+import { flexDisplay } from "../../GlobalElements";
 
 export const FooterContainer = styled.div`
   background: #003f3c;
   color: #fff;
+  ${flexDisplay}
+  width: 100%;
 `;
 
 export const FooterWrapper = styled.div`
-  padding: 200px 24px;
+  width: 100%;
+  padding-top: 200px;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  max-width: 1100px;
   margin: 0 auto;
 `;
 
 export const FooterLinksContainer = styled.div`
   display: flex;
   justify-content: center;
+  width: 100%;
 
   @media screen and (max-width: 820px) {
     padding-top: 32 px;
@@ -101,4 +106,25 @@ export const CopyRights = styled.p`
   font-size: 15px;
   margin: 0 15px;
   margin: 15px 0;
+`;
+
+export const InputContainer = styled.div`
+  ${normalFlex}
+  justify-content: space-between;
+  width: 100%;
+  @media screen and (max-width: 992px) {
+    flex-direction: column;
+  }
+`;
+
+export const TextAreaComponent = styled.div`
+  display: flex;
+  margin: 20px 0;
+  align-items: flex-start;
+  flex-direction: column;
+  width: 100%;
+
+  @media screen and (max-width: 992px) {
+    align-items: center;
+  }
 `;
